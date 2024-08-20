@@ -1,0 +1,14 @@
+<nav class="navbar {{ 'admin-nav' if admin_route }} navbar-top navbar-expand-sm">
+    <a id="logo" class="nav-item nav-link" href="/home">Til Death</a>
+    <button class="navbar-toggler mt-1 justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <div class="nav flex-fill">
+            {% if user.is_authenticated and user.is_admin() %}
+                <a class="nav-item nav-link {{ 'active-link' if page == 'admin_home'}}" href="/admin">Admin</a>
+                <div class="d-flex flex-grow-1 justify-content-end"><a class="nav-item nav-link" href="/logout">Logout</a></div>
+            {% endif %}
+        </div>
+    </div>
+</nav>

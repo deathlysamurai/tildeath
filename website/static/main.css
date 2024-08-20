@@ -1,0 +1,550 @@
+body {
+    background-image: url(../static/landing_background.jpg);
+    /* will change to landing_background_mobile at 430px background-position-x: 67%; */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.coffin-card {
+    max-width: 225px;
+    width: 30% !important;
+    min-width: 175px;
+}
+
+.coffin-card-form {
+    clip-path: polygon(15% 0%, 85% 0%, 100% 30%, 85% 100%, 15% 100%, 0% 30%);
+    aspect-ratio: 1 / 1.77 !important;
+}
+
+.coffin-card-svg {
+    position: absolute;
+    overflow: visible;
+    height: unset;
+    aspect-ratio: 1 / 1.75 !important;
+}
+
+.coffin-polygon {
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 1);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.card-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+.card-blur {
+    background: transparent;
+    backdrop-filter: blur(15px);
+}
+.card {
+    width: 400px;
+}
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid white;
+}
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+    color: white;
+}
+.inputbox i {
+    position: absolute;
+    right: 8px;
+    color: white;
+    top: 20px;
+}
+button {
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 175%;
+}
+.message-container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 5px;
+    z-index: 10; 
+}
+.alert {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress {
+    margin: 10px;
+}
+
+.table-dark {
+    --bs-table-bg: unset;
+    backdrop-filter: blur(15px);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.navbar-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: 0;
+    z-index: 1020;
+    min-height: 4rem;
+    padding: 0 1.5rem 0 1.5rem;
+    border-bottom: 1px solid #31374a;
+    background: transparent;
+    backdrop-filter: blur(5px);
+}
+
+.nav-link {
+    color: #eff2f6;
+}
+
+.admin-nav {
+    border-bottom: 1px solid #b30000;
+    background: rgba(102, 0, 0, .7);
+}
+
+.content {
+    min-height: 100vh;
+    position: relative;
+}
+
+table {
+    border: 1px #373b3e solid;
+    border-radius: 15px;
+    border-collapse: unset;
+    border-spacing: 0px;
+}
+
+tbody > tr:last-of-type * {
+    border-style: unset;
+}
+
+tbody > tr:last-of-type > th:first-of-type {
+    border-radius: 0px 0px 0px 15px;
+}
+
+tbody > tr:last-of-type > td:last-of-type {
+    border-radius: 0px 0px 15px 0px;
+}
+
+.navbar-toggler {
+    border-color: rgb(255, 255, 255);
+}
+
+.navbar-toggler-icon {
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+
+.active-link {
+    color: #0a58ca;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+input:-internal-autofill-selected{
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    /* -webkit-box-shadow: red !important; */
+    /* background-color: transparent; */
+}
+
+.tool-row {
+    background-color: rgba(0,0,0,.7);
+    position: sticky;
+    top: 4rem;
+    z-index: 10;
+}
+
+.disabled-tool {
+    color: gray;
+    cursor: default;
+}
+
+.modal {
+    --bs-modal-bg: rgba(50, 50, 50,.9);
+}
+
+.form-select {
+    color: white;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#logo {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 40px;
+    margin: 0 10px 0 0;
+}
+
+.hero {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto;
+    gap: 20px;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-name {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+}
+
+.app-description {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+    width: 60%;
+}
+
+.account-link {
+    margin-top: 5px;
+}
+
+.pantry-button {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    rotate: 15deg;
+    padding: 0 20px;
+}
+
+.meal-button {
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    padding: 0 20px;
+}
+
+.calendar-button {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    rotate: -15deg;
+    padding: 0 20px;
+}
+
+.sl-button {
+    position: absolute;
+    top: 60%;
+    left: 65%;
+    rotate: -25deg;
+    padding: 0 20px;
+}
+
+.home-mobile-buttons {
+    flex-direction: column;
+    gap: 5px;
+    width: 80%;
+    margin: 20px auto;
+    display: none;
+}
+
+.table-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 5px;
+}
+
+.table-title {
+    flex-grow: 1;
+    margin-left: 10px !important;
+}
+
+.table-card-container {
+    min-height: unset;
+    padding: unset;
+}
+
+.table-card {
+    width: unset;
+}
+
+.table-inputbox {
+    margin: unset;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+#mealFoodContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.meal-food-item {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.meal-food-item:not(:last-child) {
+    border-bottom: solid 1px white;
+}
+
+.removeNewMealFood {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.food-col {
+
+}
+
+#meal-title {
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 2px dotted white;
+    display: flex;
+    padding: 5px;
+}
+
+#meal-title>div {
+    flex-grow: 1;
+}
+
+#meal-title>button {
+    padding: 0 10px !important;
+    border-radius: 10px !important;
+    height: unset;
+    font-size: unset;
+}
+
+#foods-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.food-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.food-title-line, .food-data-line {
+    display: flex;
+}
+
+.food-title-line>*, .food-data-line>* {
+    width: 50%
+}
+
+.food-name {
+    font-size: 2rem;
+}
+
+.food-title-line {
+    border-bottom: 1px dashed white;
+    align-items: center;
+}
+
+.food-data-line {
+    align-items: end;
+    gap: 5px;
+}
+
+.food-amount>input {
+    max-width: 100%;
+}
+
+.food-unit-select:disabled {
+    color: black;
+}
+
+#add-food-container {
+    display: flex;
+    width: 50%;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+#new-food {
+    width: unset;
+}
+
+#add-food-button {
+    flex-grow: 1;
+    max-width: 25%;
+}
+
+#weekly-container {
+    display: flex;
+    gap: 10px;
+}
+
+.daily-meal {
+    border: 1px solid white;
+    border-radius: 5px;
+    flex-grow: 1;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.today-meal {
+    border: 2px solid var(--bs-success);
+    box-shadow: 0 0 5px 1px var(--bs-success);
+}
+
+#weekly-meal-select {
+    margin-bottom: 5px;
+}
+
+.day-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom-right-radius: 5px;
+    padding: 0 5px;
+}
+
+#edit-calendar-container {
+    margin-bottom: 5px;
+}
+
+#edit-calendar-container>*>button {
+    width: 100%;
+}
+
+#weekly-container.calendar {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 30%;
+}
+
+#calendar-container {
+    display: flex;
+    gap: 10px;
+}
+
+#table-container {
+    flex-grow: 1;
+}
+
+#reset-meal {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 74px);
+    padding: 5px;
+}
+#reset-meal>button {
+    background-color: var(--bs-danger);
+}
+
+.calendar-recommendation-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+    .pantry-button, .meal-button, .sl-button, .calendar-button {
+        display: none;
+    }
+
+    .home-mobile-buttons {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #weekly-container {
+        flex-direction: column;
+    }
+
+    .daily-meal {
+        aspect-ratio: unset;
+    }
+
+    #weekly-container.calendar {
+        width: 100%;
+        grid-auto-rows: 1fr;
+    }
+
+    #calendar-container {
+        flex-direction: column;
+    }
+}

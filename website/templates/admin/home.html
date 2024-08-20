@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+    {% with toolbar=true %}
+        {% include "partials/table.html" %}
+    {% endwith %}
+{% endblock %}

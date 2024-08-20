@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block title %}Til Death{% endblock %}
+
+{% block content %}
+    <div class="card-container">
+        <svg class="polygon coffin-card coffin-card-svg" height="100%" width="100%" viewBox="0 0 100 100"  preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="coffin-polygon" points="15,0 85,0 100,30 85,100 15,100 0,30" />
+        </svg>
+        <div class="card coffin-card-form coffin-card card-blur">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="inputbox">
+                        <input type="text" id="passphrase" name="passphrase" required>
+                        <label for="passphrase">Passphrase</label>
+                    </div>
+                    <br>
+                    <button type="submit" class="w-100">Enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
