@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import current_user, login_user, logout_user
 from ..models import User
 from sqlalchemy import func
+import datetime
 
 general = Blueprint('general', __name__)
 
@@ -10,8 +11,9 @@ def home():
     if request.method == 'GET':
         if not current_user.is_authenticated:
             return redirect(url_for('general.login'))
+        wedding_time = datetime.datetime(year=2025, month=11, day=1, hour=10)
     
-    return render_template('home.html', user=current_user, page='home')
+    return render_template('home.html', wedding_time=wedding_time, user=current_user, page='home')
 
 @general.route('/', methods=['GET', 'POST'])
 def login():     
@@ -35,3 +37,15 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('general.login'))
+
+@general.route('/rsvp', methods=['POST'])
+def rsvp():
+    if request.method == 'POST':
+        rsvpData = request.get_json()
+        drink = rsvpData['drink']
+        message = rsvpData['message']
+        
+        print(drink)
+        print(message)
+
+    return {}, 201, {'Content-Type': 'application/json'}

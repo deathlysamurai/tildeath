@@ -9,10 +9,12 @@ ACCESS = {
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=True)
     name = db.Column(db.String(150), nullable=False)
     passphrase = db.Column(db.String(150), nullable=False)
     access = db.Column(db.Integer, default=0, nullable=False)
+    RSVP = db.Column(db.Boolean, default=False, nullable=False)
+    RSVP_message = db.Column(db.String, nullable=True)
 
     def is_admin(self):
         return self.access == ACCESS['admin']

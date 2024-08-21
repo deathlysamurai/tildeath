@@ -9,7 +9,7 @@ admin = Blueprint('admin', __name__)
 @admin.route('/', methods=['GET'])
 @requires_access_level(ACCESS['admin'])
 def home():
-    items = []
-    table_columns = []
+    users = User.query.all()
+    table_columns = User.table_columns(self=User())
 
-    return render_template("admin/home.html", table_columns=table_columns, items=items, table_title="Users", user=current_user, page="admin_home")
+    return render_template("admin/home.html", table_columns=table_columns, items=users, table_title="Users", user=current_user, page="admin_home")

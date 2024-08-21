@@ -2,5 +2,17 @@
 {% block title %}Til Death{% endblock %}
 
 {% block content %}
+    <input type="hidden" name="weddingTime" id="weddingTime" value="{{ wedding_time }}">
     Hello {{ user.name }}
+    <div id="countdown">
+        <span id="days"></span>days
+        <span id="hours"></span>hours
+        <span id="minutes"></span>minutes
+        <span id="seconds"></span>seconds
+    </div>
+    {% if not user.rsvp %}
+        <input type="text" id="rsvpDrink" />
+        <input type="text" id="rsvpMessage" />
+        <input type="submit" id="rsvpButton" />
+    {% endif %}
 {% endblock %}
